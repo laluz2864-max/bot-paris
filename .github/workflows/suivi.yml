@@ -29,7 +29,7 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
-          TG_CHAT: ${{ secrets.TG_CHAT }}
+          TG_CHAT: "-5305393071"
           DUREE_MIN: ${{ github.event.inputs.duree || '60' }}
         run: python suivi_live.py
       - name: Sauvegarde de l'état
