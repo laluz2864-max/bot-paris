@@ -33,8 +33,9 @@ jobs:
           DUREE_MIN: ${{ github.event.inputs.duree || '60' }}
         run: python suivi_live.py
       - name: Sauvegarde de l'état
+        continue-on-error: true
         run: |
           git config user.name "bot-paris"
           git config user.email "bot-paris@users.noreply.github.com"
           git add etat.json
-          git diff --cached --quiet || (git commit -m "état du suivi" && git push)
+          git diff --cached --quiet || (git commit -m "état du suivi" && (git push || (git pull --rebase -X ours && git push)))
