@@ -94,7 +94,8 @@ def paris_a_suivre():
             debut = datetime.fromisoformat(deb.replace("Z", "+00:00"))
             if debut.tzinfo is None:
                 debut = debut.replace(tzinfo=timezone.utc)
-            if debut - timedelta(minutes=10) <= NOW <= debut + timedelta(hours=8):
+            fen = 16 if d.get("suivi", {}).get("type") == "combine" else 8
+            if debut - timedelta(minutes=10) <= NOW <= debut + timedelta(hours=fen):
                 out.append({"page": p["id"], "debut": debut, **d})
         if not r.get("has_more"):
             return out
@@ -243,6 +244,49 @@ def evaluer(p, m):
     return None, score
 
 
+# ---------- Combinés ----------
+def suivre_combine(p, e):
+    """Chaque jambe est suivie comme un pari simple ; le combiné est perdu dès qu'une jambe tombe,
+    gagné quand toutes sont passées (une jambe annulée compte pour cote 1)."""
+    jambes = p["suivi"].get("jambes", [])
+    ej = e.setdefault("jambes", {})
+    n = len(jambes)
+    for i, j in enumerate(jambes):
+        k = str(i)
+        if ej.get(k, {}).get("res"):
+            continue
+        deb = j.get("debut")
+        try:
+            debut = datetime.fromisoformat(deb.replace("Z", "+00:00")) if deb else p["debut"]
+        except Exception:
+            debut = p["debut"]
+        if debut.tzinfo is None:
+            debut = debut.replace(tzinfo=timezone.utc)
+        pj = {"match": j.get("match", ""), "debut": debut, "suivi": j, "sport": j.get("sport", p.get("sport", "")),
+              "competition": j.get("competition", "")}
+        m = trouver_match(pj)
+        if not m:
+            continue
+        res, score = evaluer(pj, m)
+        st = ej.setdefault(k, {})
+        if m["etat"] == "in" and not st.get("debut"):
+            st["debut"] = True
+            telegram(f"▶️ Combiné, jambe {i + 1}/{n} : c'est parti — {pj['match']}")
+        if res:
+            st["res"] = res
+            ic = {"gagne": "✅", "perdu": "❌", "annule": "↩️"}[res]
+            if res != "perdu":
+                telegram(f"{ic} Combiné, jambe {i + 1}/{n} {'passée' if res == 'gagne' else 'annulée (cote 1)'} : {pj['match']}\nScore : {score}")
+            else:
+                return "perdu", f"jambe {i + 1}/{n} perdue — {pj['match']} : {score}"
+    res = [ej.get(str(i), {}).get("res") for i in range(n)]
+    if n and all(res):
+        if all(r == "annule" for r in res):
+            return "annule", "toutes les jambes annulées"
+        return "gagne", f"{n}/{n} jambes passées"
+    return None, None
+
+
 # ---------- Boucle principale ----------
 def main():
     etat = json.load(open(ETAT_F)) if os.path.exists(ETAT_F) else {}
@@ -251,6 +295,21 @@ def main():
     for p in paris:
         pid = p["id"]
         e = etat.setdefault(pid, {})
+        if e.get("fini"):
+            continue
+        tete = f"{p['match']} — {p['pari']}"
+        if p["suivi"].get("type") == "combine":
+            res, score = suivre_combine(p, e)
+            if res:
+                txt = {"gagne": "✅ COMBINÉ PASSÉ !", "perdu": "❌ Combiné perdu", "annule": "↩️ Combiné remboursé"}[res]
+                try:
+                    ecrire_resultat(p["page"], res)
+                except Exception as ex:
+                    print("notion", ex)
+                    continue
+                telegram(f"{txt}\n{p['pari']}\n{score}\n👉 {APP}")
+                e["fini"] = res
+            continue
         m = trouver_match(p)
         if not m:
             print(pid, "match introuvable")
