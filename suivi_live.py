@@ -271,12 +271,12 @@ def suivre_combine(p, e):
         st = ej.setdefault(k, {})
         if m["etat"] == "in" and not st.get("debut"):
             st["debut"] = True
-            telegram(f"▶️ Combiné, jambe {i + 1}/{n} : c'est parti — {pj['match']}")
+            pass  # Lucas : seulement les notifications de résultat (gagné / perdu / remboursé)
         if res:
             st["res"] = res
             ic = {"gagne": "✅", "perdu": "❌", "annule": "↩️"}[res]
             if res != "perdu":
-                telegram(f"{ic} Combiné, jambe {i + 1}/{n} {'passée' if res == 'gagne' else 'annulée (cote 1)'} : {pj['match']}\nScore : {score}")
+                pass  # Lucas : seulement les notifications de résultat (gagné / perdu / remboursé)
             else:
                 return "perdu", f"jambe {i + 1}/{n} perdue — {pj['match']} : {score}"
     res = [ej.get(str(i), {}).get("res") for i in range(n)]
@@ -318,7 +318,7 @@ def main():
         tete = f"{p['match']} — {p['pari']}"
         if m["etat"] == "in" and not e.get("debut"):
             e["debut"] = True
-            telegram(f"▶️ C'est parti : {tete}")
+            pass  # Lucas : seulement les notifications de résultat (gagné / perdu / remboursé)
         # Nouveau but (foot, hockey) / nouveau set terminé (tennis) — pas de message à chaque jeu ou panier
         if m["tennis"]:
             j0, j1 = m["joueurs"]
@@ -330,7 +330,7 @@ def main():
             jalon = score
         if jalon and m["etat"] in ("in", "post") and jalon != e.get("jalon"):
             if e.get("jalon") is not None and res is None:
-                telegram(f"📢 {score}\n({p['pari']})")
+                pass  # Lucas : seulement les notifications de résultat (gagné / perdu / remboursé)
             e["jalon"] = jalon
         if res:
             txt = {"gagne": "✅ PARI PASSÉ !", "perdu": "❌ Pari perdu", "annule": "↩️ Pari remboursé / annulé"}[res]
