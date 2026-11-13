@@ -260,11 +260,19 @@ def main():
         if m["etat"] == "in" and not e.get("debut"):
             e["debut"] = True
             telegram(f"▶️ C'est parti : {tete}")
-        # Nouveau but / nouveau set terminé / nouvelle période
-        if m["etat"] in ("in", "post") and score != e.get("score"):
-            if e.get("score") and res is None:
+        # Nouveau but (foot, hockey) / nouveau set terminé (tennis) — pas de message à chaque jeu ou panier
+        if m["tennis"]:
+            j0, j1 = m["joueurs"]
+            sets = [(a, b) for a, b in zip(j0["jeux"], j1["jeux"]) if max(a, b) >= 6 and (abs(a - b) >= 2 or max(a, b) == 7)]
+            jalon = str(sets)
+        elif p.get("sport") in ("nba", "basket"):
+            jalon = None  # trop de paniers : seulement début et résultat
+        else:
+            jalon = score
+        if jalon and m["etat"] in ("in", "post") and jalon != e.get("jalon"):
+            if e.get("jalon") is not None and res is None:
                 telegram(f"📢 {score}\n({p['pari']})")
-            e["score"] = score
+            e["jalon"] = jalon
         if res:
             txt = {"gagne": "✅ PARI PASSÉ !", "perdu": "❌ Pari perdu", "annule": "↩️ Pari remboursé / annulé"}[res]
             try:
