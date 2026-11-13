@@ -80,6 +80,7 @@ def paris_a_suivre():
         if cursor:
             body["start_cursor"] = cursor
         r = notion(f"data_sources/{DS}/query", body, "POST")
+        print(f"Notion : {len(r.get('results', []))} pari(s) en attente")
         for p in r.get("results", []):
             pr = p["properties"]
             txt = "".join(t.get("plain_text", "") for t in pr.get("Data", {}).get("rich_text", []))
