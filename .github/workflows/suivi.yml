@@ -2,8 +2,12 @@ name: Suivi en direct des paris
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/20 * * * *"
   workflow_dispatch:
+    inputs:
+      duree:
+        description: "Durée du suivi en minutes"
+        default: "330"
 
 concurrency:
   group: suivi
@@ -15,7 +19,7 @@ permissions:
 jobs:
   suivi:
     runs-on: ubuntu-latest
-    timeout-minutes: 4
+    timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -26,6 +30,7 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT: ${{ secrets.TG_CHAT }}
+          DUREE_MIN: ${{ github.event.inputs.duree || '60' }}
         run: python suivi_live.py
       - name: Sauvegarde de l'état
         run: |

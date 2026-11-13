@@ -281,4 +281,16 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # Mode boucle : tourne pendant DUREE_MIN minutes en vérifiant toutes les 4 minutes
+    # (GitHub lance mal les tâches toutes les 5 min, on garde donc le programme éveillé).
+    fin = time.time() + 60 * int(os.environ.get("DUREE_MIN", "0"))
+    while True:
+        NOW = datetime.now(timezone.utc)
+        _cache.clear()
+        try:
+            main()
+        except Exception as e:
+            print("erreur passage :", e)
+        if time.time() + 240 > fin:
+            break
+        time.sleep(240)
