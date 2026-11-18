@@ -72,5 +72,12 @@
   "debut": true,
   "fini": "gagne"
  },
- "20261118-1937-1": {}
+ "20261118-1937-1": {
+  "debut": true,
+  "jalon": "[]"
+ },
+ "20261118-2037-1": {
+  "debut": true,
+  "jalon": "Chelsea 0-0 Paris Saint-Germain"
+ }
 }
