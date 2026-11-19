@@ -83,7 +83,8 @@
   "fini": "gagne"
  },
  "20261118-2137-2": {
-  "debut": true
+  "debut": true,
+  "fini": "perdu"
  },
  "20261118-2137-1": {
   "debut": true
