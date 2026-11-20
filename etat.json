@@ -92,9 +92,11 @@
  },
  "20261119-1937-1": {},
  "20261119-2137-2": {
-  "debut": true
+  "debut": true,
+  "fini": "gagne"
  },
  "20261119-2137-1": {
-  "debut": true
+  "debut": true,
+  "fini": "perdu"
  }
 }
