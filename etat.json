@@ -142,15 +142,18 @@
  },
  "20261121-1437-1": {
   "debut": true,
-  "jalon": "1. FC Union Berlin 1-4 RB Leipzig"
+  "jalon": "1. FC Union Berlin 1-5 RB Leipzig",
+  "fini": "gagne"
  },
  "20261121-1437-2": {
   "debut": true,
-  "jalon": "Eintracht Frankfurt 1-0 TSG Hoffenheim"
+  "jalon": "Eintracht Frankfurt 1-0 TSG Hoffenheim",
+  "fini": "perdu"
  },
  "20261121-1537-1": {
   "debut": true,
-  "jalon": "Tottenham Hotspur 2-0 Ipswich Town"
+  "jalon": "Tottenham Hotspur 2-0 Ipswich Town",
+  "fini": "gagne"
  },
  "20261121-1637-2": {
   "debut": true,
@@ -158,10 +161,12 @@
  },
  "20261121-1637-1": {
   "debut": true,
-  "jalon": "LASK Linz 0-0 TSV Hartberg"
+  "jalon": "LASK Linz 2-1 TSV Hartberg"
  },
  "20261121-1637-3": {
   "debut": true,
-  "jalon": "Nice 0-0 Paris Saint-Germain"
- }
+  "jalon": "Nice 1-2 Paris Saint-Germain"
+ },
+ "20261121-1737-2": {},
+ "20261121-1737-1": {}
 }
