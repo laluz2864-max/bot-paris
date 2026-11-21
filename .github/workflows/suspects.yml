@@ -1,0 +1,42 @@
+name: Chutes de cotes suspectes (simulation)
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+    inputs:
+      duree:
+        description: "Durée de surveillance en minutes"
+        default: "300"
+
+concurrency:
+  group: suspects
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  surveillance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Surveillance des cotes
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT: "6893492357"
+          DUREE_MIN: ${{ github.event.inputs.duree || '300' }}
+        run: python suspects.py
+      - name: Sauvegarde (état, archive horodatée, alertes)
+        if: always()
+        continue-on-error: true
+        run: |
+          git config user.name "bot-paris"
+          git config user.email "bot-paris@users.noreply.github.com"
+          git add etat_suspects.json archive_cotes.csv alertes_suspectes.csv 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "relevés de cotes" && (git push || (git pull --rebase -X ours && git push)))
