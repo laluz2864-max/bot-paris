@@ -122,6 +122,19 @@
  },
  "20261121-1237-1": {
   "debut": true,
-  "jalon": "Hannover 96 0-0 SpVgg Greuther Fürth"
+  "jalon": "Hannover 96 2-1 SpVgg Greuther Fürth",
+  "fini": "gagne"
+ },
+ "20261121-1337-1": {
+  "debut": true,
+  "jalon": "Galatasaray 2-1 Samsunspor"
+ },
+ "20261121-1337-2": {
+  "debut": true,
+  "jalon": "Alavés 1-1 Deportivo"
+ },
+ "20261121-1237-2": {
+  "debut": true,
+  "jalon": "Norwich City 2-1 Cardiff City"
  }
 }
