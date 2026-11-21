@@ -172,10 +172,17 @@
  },
  "20261121-1737-2": {
   "debut": true,
-  "jalon": "Newcastle United 0-1 Arsenal"
+  "jalon": "Newcastle United 2-2 Arsenal",
+  "fini": "perdu"
  },
  "20261121-1737-1": {
   "debut": true,
-  "jalon": "Schalke 04 0-0 VfB Stuttgart"
+  "jalon": "Schalke 04 0-0 VfB Stuttgart",
+  "fini": "perdu"
+ },
+ "20261121-1937-1": {},
+ "20261121-1937-2": {
+  "debut": true,
+  "jalon": "[]"
  }
 }
