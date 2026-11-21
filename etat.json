@@ -157,16 +157,25 @@
  },
  "20261121-1637-2": {
   "debut": true,
-  "jalon": "Kocaelispor 0-0 Fenerbahce"
+  "jalon": "Kocaelispor 2-2 Fenerbahce",
+  "fini": "perdu"
  },
  "20261121-1637-1": {
   "debut": true,
-  "jalon": "LASK Linz 2-1 TSV Hartberg"
+  "jalon": "LASK Linz 2-1 TSV Hartberg",
+  "fini": "perdu"
  },
  "20261121-1637-3": {
   "debut": true,
-  "jalon": "Nice 1-2 Paris Saint-Germain"
+  "jalon": "Nice 2-3 Paris Saint-Germain",
+  "fini": "gagne"
  },
- "20261121-1737-2": {},
- "20261121-1737-1": {}
+ "20261121-1737-2": {
+  "debut": true,
+  "jalon": "Newcastle United 0-1 Arsenal"
+ },
+ "20261121-1737-1": {
+  "debut": true,
+  "jalon": "Schalke 04 0-0 VfB Stuttgart"
+ }
 }
