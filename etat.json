@@ -127,14 +127,29 @@
  },
  "20261121-1337-1": {
   "debut": true,
-  "jalon": "Galatasaray 2-1 Samsunspor"
+  "jalon": "Galatasaray 2-1 Samsunspor",
+  "fini": "perdu"
  },
  "20261121-1337-2": {
   "debut": true,
-  "jalon": "Alavés 1-1 Deportivo"
+  "jalon": "Alavés 2-1 Deportivo",
+  "fini": "perdu"
  },
  "20261121-1237-2": {
   "debut": true,
-  "jalon": "Norwich City 2-1 Cardiff City"
+  "jalon": "Norwich City 2-1 Cardiff City",
+  "fini": "gagne"
+ },
+ "20261121-1437-1": {
+  "debut": true,
+  "jalon": "1. FC Union Berlin 1-1 RB Leipzig"
+ },
+ "20261121-1437-2": {
+  "debut": true,
+  "jalon": "Eintracht Frankfurt 1-0 TSG Hoffenheim"
+ },
+ "20261121-1537-1": {
+  "debut": true,
+  "jalon": "Tottenham Hotspur 1-0 Ipswich Town"
  }
 }
