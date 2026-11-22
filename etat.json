@@ -204,5 +204,13 @@
   "jalon": "Kasimpasa 1-1 Alanyaspor"
  },
  "20261122-1537-1": {},
- "20261122-1637-1": {}
+ "20261122-1637-1": {},
+ "20261122-1737-1": {
+  "debut": true,
+  "jalon": "AC Milan 5-1 Frosinone"
+ },
+ "20261122-1737-2": {
+  "debut": true,
+  "jalon": "Osasuna 1-0 Málaga"
+ }
 }
