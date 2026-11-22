@@ -192,8 +192,15 @@
  },
  "20261122-1237-1": {
   "debut": true,
-  "jalon": "Energie Cottbus 0-1 Hertha Berlin"
+  "jalon": "Energie Cottbus 0-4 Hertha Berlin",
+  "fini": "gagne"
  },
- "20261122-1337-2": {},
- "20261122-1337-1": {}
+ "20261122-1337-2": {
+  "debut": true,
+  "jalon": "Viborg FF 0-0 Randers FC"
+ },
+ "20261122-1337-1": {
+  "debut": true,
+  "jalon": "Kasimpasa 1-1 Alanyaspor"
+ }
 }
