@@ -232,6 +232,7 @@
   "fini": "perdu"
  },
  "20261123-2137-2": {
-  "debut": true
+  "debut": true,
+  "fini": "gagne"
  }
 }
