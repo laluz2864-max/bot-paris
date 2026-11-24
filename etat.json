@@ -228,6 +228,10 @@
  },
  "20261123-2137-1": {
   "debut": true,
-  "jalon": "Internacional 0-1 Vitória"
+  "jalon": "Internacional 2-5 Vitória",
+  "fini": "perdu"
+ },
+ "20261123-2137-2": {
+  "debut": true
  }
 }
