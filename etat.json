@@ -234,5 +234,14 @@
  "20261123-2137-2": {
   "debut": true,
   "fini": "gagne"
- }
+ },
+ "20261124-1937-1": {
+  "debut": true,
+  "jalon": "Hibernian 0-0 Dundee"
+ },
+ "20261124-1937-2": {
+  "debut": true,
+  "jalon": "Portsmouth 1-0 West Ham United"
+ },
+ "20261124-2037-1": {}
 }
