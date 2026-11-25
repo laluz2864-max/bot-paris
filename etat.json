@@ -258,6 +258,19 @@
  },
  "20261125-1837-1": {
   "debut": true,
-  "jalon": "Cremonese 0-0 US Avellino"
+  "jalon": "Cremonese 0-1 US Avellino",
+  "fini": "perdu"
+ },
+ "20261125-1937-1": {
+  "debut": true,
+  "jalon": "Bolton Wanderers 0-1 West Bromwich Albion"
+ },
+ "20261125-2037-2": {
+  "debut": true,
+  "jalon": "Paris Saint-Germain 0-1 AS Roma"
+ },
+ "20261125-2037-1": {
+  "debut": true,
+  "jalon": "Paris Saint-Germain 0-1 AS Roma"
  }
 }
