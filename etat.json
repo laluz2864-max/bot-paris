@@ -263,14 +263,17 @@
  },
  "20261125-1937-1": {
   "debut": true,
-  "jalon": "Bolton Wanderers 1-1 West Bromwich Albion"
+  "jalon": "Bolton Wanderers 1-3 West Bromwich Albion",
+  "fini": "gagne"
  },
  "20261125-2037-2": {
   "debut": true,
-  "jalon": "Paris Saint-Germain 1-1 AS Roma"
+  "jalon": "Paris Saint-Germain 2-2 AS Roma",
+  "fini": "perdu"
  },
  "20261125-2037-1": {
   "debut": true,
-  "jalon": "Paris Saint-Germain 1-1 AS Roma"
+  "jalon": "Paris Saint-Germain 2-2 AS Roma",
+  "fini": "perdu"
  }
 }
