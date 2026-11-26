@@ -288,10 +288,12 @@
  },
  "20261126-1737-1": {
   "debut": true,
-  "jalon": "Viktoria Plzen 3-0 Benfica"
+  "jalon": "Viktoria Plzen 4-0 Benfica",
+  "fini": "perdu"
  },
  "20261126-1737-2": {
   "debut": true,
-  "jalon": "Celta Vigo 1-0 AFC Bournemouth"
+  "jalon": "Celta Vigo 1-2 AFC Bournemouth",
+  "fini": "gagne"
  }
 }
