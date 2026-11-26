@@ -298,10 +298,12 @@
  },
  "20261126-2037-1": {
   "debut": true,
-  "jalon": "Borac Banja Luka 2-0 Atalanta"
+  "jalon": "Borac Banja Luka 2-3 Atalanta",
+  "fini": "gagne"
  },
  "20261126-2037-2": {
   "debut": true,
-  "jalon": "OFI Crete 0-2 Anderlecht"
+  "jalon": "OFI Crete 1-3 Anderlecht",
+  "fini": "gagne"
  }
 }
