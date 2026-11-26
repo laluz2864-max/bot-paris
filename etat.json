@@ -286,6 +286,12 @@
   "jalon": "Abha 0-1 Al Shabab",
   "fini": "gagne"
  },
- "20261126-1737-1": {},
- "20261126-1737-2": {}
+ "20261126-1737-1": {
+  "debut": true,
+  "jalon": "Viktoria Plzen 3-0 Benfica"
+ },
+ "20261126-1737-2": {
+  "debut": true,
+  "jalon": "Celta Vigo 1-0 AFC Bournemouth"
+ }
 }
