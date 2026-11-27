@@ -318,7 +318,12 @@
  },
  "20261127-1737-1": {
   "debut": true,
-  "jalon": "VfL Bochum 0-0 SV Darmstadt 98"
+  "jalon": "VfL Bochum 2-0 SV Darmstadt 98",
+  "fini": "gagne"
  },
- "20261127-1837-1": {}
+ "20261127-1837-1": {},
+ "20261127-1937-1": {
+  "debut": true,
+  "jalon": "Werder Bremen 0-0 Borussia Mönchengladbach"
+ }
 }
