@@ -347,9 +347,18 @@
  },
  "20261128-1437-1": {
   "debut": true,
-  "jalon": "Mainz 0-0 1. FC Union Berlin"
+  "jalon": "Mainz 2-1 1. FC Union Berlin",
+  "fini": "gagne"
  },
  "20261128-1537-1": {
   "jalon": "Lincoln City 0-0 Wolverhampton Wanderers"
+ },
+ "20261128-1537-2": {
+  "debut": true,
+  "jalon": "Arouca 0-0 Rio Ave"
+ },
+ "20261128-1637-1": {
+  "debut": true,
+  "jalon": "Angers 1-0 Lens"
  }
 }
